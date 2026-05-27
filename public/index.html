@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solana AI Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-brand">
+        <span class="logo-icon">◆</span>
+        <h1>Solana AI Toolkit</h1>
+      </div>
+      <div class="header-status">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Connecting…</span>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="rug" role="tab" aria-selected="true">
+        <span class="tab-icon">🛡️</span>
+        <span class="tab-label">Rug Detector</span>
+      </button>
+      <button class="tab" data-tab="yield" role="tab" aria-selected="false">
+        <span class="tab-icon">📈</span>
+        <span class="tab-label">Yield Optimizer</span>
+      </button>
+      <button class="tab" data-tab="smart" role="tab" aria-selected="false">
+        <span class="tab-icon">🧠</span>
+        <span class="tab-label">Smart Money</span>
+      </button>
+      <button class="tab" data-tab="nft" role="tab" aria-selected="false">
+        <span class="tab-icon">🎨</span>
+        <span class="tab-label">NFT Predictor</span>
+      </button>
+    </nav>
+
+    <main class="content">
+      <!-- Rug Detector -->
+      <section class="panel active" id="panel-rug" role="tabpanel">
+        <div class="panel-header">
+          <h2>Rug Detector</h2>
+          <p class="subtitle">Analyze token safety and detect rug-pull risk</p>
+        </div>
+        <form class="input-group" id="rugForm">
+          <label for="rugInput">Token Address</label>
+          <div class="input-row">
+            <input type="text" id="rugInput" placeholder="Enter Solana token mint address…" autocomplete="off">
+            <button type="submit" class="btn btn-primary">Analyze</button>
+          </div>
+        </form>
+        <div class="results" id="rugResults"></div>
+      </section>
+
+      <!-- Yield Optimizer -->
+      <section class="panel" id="panel-yield" role="tabpanel">
+        <div class="panel-header">
+          <h2>Yield Optimizer</h2>
+          <p class="subtitle">Find the best yield opportunities across Solana DeFi</p>
+        </div>
+        <form class="input-group" id="yieldForm">
+          <label for="yieldInput">Portfolio Value (SOL)</label>
+          <div class="input-row">
+            <input type="number" id="yieldInput" placeholder="e.g. 100" min="0" step="0.1">
+            <button type="submit" class="btn btn-primary">Optimize</button>
+          </div>
+        </form>
+        <div class="results" id="yieldResults"></div>
+      </section>
+
+      <!-- Smart Money -->
+      <section class="panel" id="panel-smart" role="tabpanel">
+        <div class="panel-header">
+          <h2>Smart Money Tracker</h2>
+          <p class="subtitle">Track whale wallets and institutional movements</p>
+        </div>
+        <div class="actions-row">
+          <button class="btn btn-primary" id="smartMoneyBtn">Load Top Wallets</button>
+        </div>
+        <div class="results" id="smartResults"></div>
+      </section>
+
+      <!-- NFT Predictor -->
+      <section class="panel" id="panel-nft" role="tabpanel">
+        <div class="panel-header">
+          <h2>NFT Price Predictor</h2>
+          <p class="subtitle">AI-powered NFT price estimation and collection analysis</p>
+        </div>
+        <form class="input-group" id="nftForm">
+          <label for="nftInput">Collection Address</label>
+          <div class="input-row">
+            <input type="text" id="nftInput" placeholder="Enter NFT collection mint address…" autocomplete="off">
+            <button type="submit" class="btn btn-primary">Predict</button>
+          </div>
+        </form>
+        <div class="results" id="nftResults"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Solana AI Toolkit — Powered by AI</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
